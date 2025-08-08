@@ -67,35 +67,50 @@ const HeroSection = () => {
     }
   };
 
+  // Prevent hydration mismatch by not rendering dynamic content until mounted
+  if (!isMounted) {
+    return (
+      <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white dark:text-white mb-4 sm:mb-6">
+            Hello, I'm a{' '}
+            <br className="block sm:hidden" />
+            <span className="bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-600 bg-clip-text text-transparent inline-block min-h-[1.2em]">
+              Full Stack Developer
+            </span>
+          </h1>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Animated Background Elements - Only render on client */}
-      {isMounted && (
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          {[...Array(15)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute w-1 h-1 md:w-2 md:h-2 bg-white/20 dark:bg-white/30 rounded-full"
-              animate={{
-                x: [0, 50 + i * 10, 0],
-                y: [0, -50 - i * 5, 0],
-                scale: [1, 1.2, 1],
-                opacity: [0.3, 0.6, 0.3]
-              }}
-              transition={{
-                duration: 4 + i * 0.3,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: i * 0.2
-              }}
-              style={{
-                left: `${10 + (i * 5) % 80}%`,
-                top: `${20 + (i * 7) % 60}%`,
-              }}
-            />
-          ))}
-        </div>
-      )}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {[...Array(15)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-1 h-1 md:w-2 md:h-2 bg-white/20 dark:bg-white/30 rounded-full"
+            animate={{
+              x: [0, 50 + i * 10, 0],
+              y: [0, -50 - i * 5, 0],
+              scale: [1, 1.2, 1],
+              opacity: [0.3, 0.6, 0.3]
+            }}
+            transition={{
+              duration: 4 + i * 0.3,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: i * 0.2
+            }}
+            style={{
+              left: `${10 + (i * 5) % 80}%`,
+              top: `${20 + (i * 7) % 60}%`,
+            }}
+          />
+        ))}
+      </div>
 
       <motion.div
         className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10"
