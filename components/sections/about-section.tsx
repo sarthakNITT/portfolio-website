@@ -70,12 +70,8 @@ const AboutSection = () => {
             <motion.div variants={itemVariants}>
               <div className="relative">
                 <div className="w-80 h-80 mx-auto relative overflow-hidden rounded-full glass pulse-glow">
-                  <img
-                    src="https://images.pexels.com/photos/3777931/pexels-photo-3777931.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=300&w=300"
-                    alt="Profile"
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-tr from-blue-400/20 to-purple-600/20 rounded-full" />
+                  <img src="/profile.png" alt="Profile" className="w-full h-full object-cover"/>
+                  {/* <div className="absolute inset-0 bg-gradient-to-tr from-blue-400/20 to-purple-600/20 rounded-full" /> */}
                 </div>
                 <motion.div
                   animate={{ rotate: 360 }}

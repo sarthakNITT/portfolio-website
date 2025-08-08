@@ -80,7 +80,7 @@ const ProjectsSection = () => {
             </h2>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-3 gap-8">
             {projects.map((project, index) => (
               <motion.div key={index} variants={itemVariants}>
                 <Card className="h-full glass border-0 overflow-hidden group hover:shadow-xl transition-all duration-300">
