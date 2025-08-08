@@ -1,128 +1,88 @@
-"use client"
+import { motion } from "framer-motion";
+import { Menu, X } from "lucide-react";
+import { useState } from "react";
 
-import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { Moon, Sun, Menu, X } from 'lucide-react';
-import { useTheme } from 'next-themes';
-import { Button } from '@/components/ui/button';
+const navItems = [
+  { name: "About", href: "#about" },
+  { name: "Journey", href: "#journey" },
+  { name: "Projects", href: "#projects" },
+  { name: "Resume", href: "#resume" },
+  { name: "Coming Soon", href: "#coming-soon" },
+  { name: "Contact", href: "#contact" },
+];
 
-const Header = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { theme, setTheme } = useTheme();
+export default function Navigation() {
+  const [isOpen, setIsOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const navItems = [
-    { name: 'About', href: '#about' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Achievements', href: '#achievements' },
-    { name: 'Journey', href: '#journey' },
-    { name: 'Collaborate', href: '#collaborate' },
-  ];
+  const scrollToSection = (href: string) => {
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+      setIsOpen(false);
+    }
+  };
 
   return (
-    <motion.header
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled 
-          ? 'glass shadow-lg backdrop-blur-md bg-white/10 dark:bg-black/10' 
-          : 'bg-transparent'
-      }`}
-    >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
+    <nav className="fixed top-0 w-full z-50 bg-dark-900/90 backdrop-blur-md border-b border-dark-700 transform-3d">
+      <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent font-orbitron"
+            initial={{ opacity: 0, rotateY: -180 }}
+            animate={{ opacity: 1, rotateY: 0 }}
+            className="text-2xl font-bold text-primary animate-glow transform-3d"
+            whileHover={{ rotateY: 10, scale: 1.1 }}
           >
-            SARTHAK KARODE
+            SK
           </motion.div>
-
+          
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-6 lg:space-x-8">
+          <div className="hidden md:flex space-x-8">
             {navItems.map((item) => (
-              <motion.a
+              <motion.button
                 key={item.name}
-                href={item.href}
-                whileHover={{ scale: 1.1 }}
+                onClick={() => scrollToSection(item.href)}
+                className="hover:text-primary transition-all duration-300 transform-3d"
+                whileHover={{ 
+                  scale: 1.05,
+                  rotateX: 5,
+                  translateZ: 5
+                }}
                 whileTap={{ scale: 0.95 }}
-                className="text-foreground dark:text-foreground hover:text-blue-400 dark:hover:text-blue-400 transition-colors duration-200 text-sm lg:text-base"
               >
                 {item.name}
-              </motion.a>
+              </motion.button>
             ))}
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-              className="ml-4 hover:bg-white/20 dark:hover:bg-black/20"
-            >
-              {theme === 'dark' ? 
-                <Sun className="h-4 w-4 text-foreground dark:text-foreground" /> : 
-                <Moon className="h-4 w-4 text-foreground dark:text-foreground" />
-              }
-            </Button>
-          </nav>
-
-          {/* Mobile Navigation */}
-          <div className="md:hidden flex items-center space-x-4">
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-              className="hover:bg-white/20 dark:hover:bg-black/20"
-            >
-              {theme === 'dark' ? 
-                <Sun className="h-4 w-4 text-foreground dark:text-foreground" /> : 
-                <Moon className="h-4 w-4 text-foreground dark:text-foreground" />
-              }
-            </Button>
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="hover:bg-white/20 dark:hover:bg-black/20"
-            >
-              {isMobileMenuOpen ? 
-                <X className="h-4 w-4 text-foreground dark:text-foreground" /> : 
-                <Menu className="h-4 w-4 text-foreground dark:text-foreground" />
-              }
-            </Button>
           </div>
+
+          {/* Mobile Navigation Button */}
+          <button
+            className="md:hidden text-primary"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
 
-        {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <motion.nav
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden mt-4 glass rounded-lg p-4 bg-white/10 dark:bg-black/10 backdrop-blur-md"
+        {/* Mobile Navigation Menu */}
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="md:hidden mt-4 bg-dark-800 rounded-lg p-4"
           >
             {navItems.map((item) => (
-              <motion.a
+              <button
                 key={item.name}
-                href={item.href}
-                whileTap={{ scale: 0.95 }}
-                className="block py-2 text-foreground dark:text-foreground hover:text-blue-400 dark:hover:text-blue-400 transition-colors duration-200"
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={() => scrollToSection(item.href)}
+                className="block w-full text-left py-2 hover:text-primary transition-colors duration-300"
               >
                 {item.name}
-              </motion.a>
+              </button>
             ))}
-          </motion.nav>
+          </motion.div>
         )}
       </div>
-    </motion.header>
+    </nav>
   );
-};
-
-export default Header;
+}
