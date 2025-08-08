@@ -13,53 +13,75 @@ const JourneySection = () => {
 
   const journeySteps = [
     {
-      year: "2019",
-      title: "Computer Science Degree",
-      company: "State University",
+      year: "2023",
+      title: "B-Tech in Production Engineering",
+      company: "NIT Trichy",
       type: "education",
-      icon: GraduationCap,
-      description: "Graduated with honors in Computer Science, specializing in web technologies and algorithms.",
-      skills: ["Data Structures", "Algorithms", "Web Development", "Database Design"],
+      description: "• Pursuing B-Tech with CS Minor, focusing on software development and algorithms.",
+      skills: ["Data Structures", "Algorithms", "Web Development", "Database Design", "Computer Networks", "Operating Systems", "System Design"],
       color: "from-blue-400 to-blue-600"
     },
     {
-      year: "2019-2020",
-      title: "Junior Frontend Developer",
-      company: "StartupTech Inc.",
-      type: "work",
-      icon: Briefcase,
-      description: "Built responsive web applications using React and collaborated with UX designers.",
-      skills: ["React", "JavaScript", "HTML/CSS", "Git"],
+      year: "2023-Present",
+      title: "Consultant Role at World Quant",
+      company: "WorldQuant @Brain",
+      type: "Contract Work",
+      description: "Secured Top 19th rank in WorldQuant Brain Alphathon competition, leading to consultant role with WorldQuant.",
+      skills: ["Quantitative Finance", "Equity Research", "Consulting", "Investment Strategies"],
       color: "from-green-400 to-green-600"
     },
     {
-      year: "2020-2022",
-      title: "Full-Stack Developer",
-      company: "Digital Solutions Co.",
-      type: "work",
-      icon: Briefcase,
-      description: "Developed end-to-end web applications and led a team of 3 junior developers.",
-      skills: ["Node.js", "MongoDB", "React", "Team Leadership"],
+      year: "2023-2024",
+      title: "All-Stack Developer (Web & Mobile)",
+      company: "100xCohort",
+      type: "Contract",
+      description: "Leaned full-stack development with a focus on web and mobile applications, including React Native, Xcode, Android Studio.",
+      skills: ["Node.js", "MongoDB", "React", "React Native", "postgreSQL", "Tailwind CSS", "Next.js", "prisma", "Flutter", "Swift", "kotlin"],
       color: "from-purple-400 to-purple-600"
     },
     {
-      year: "2022-2023",
-      title: "Senior Frontend Engineer",
-      company: "TechCorp Global",
+      year: "2024-present",
+      title: "Application Developer at Spider R&D",
+      company: "Spider R&D",
       type: "work",
-      icon: Briefcase,
-      description: "Architected scalable frontend solutions and mentored junior developers.",
-      skills: ["Next.js", "TypeScript", "AWS", "Mentoring"],
+      description: "Built and deployed scalable applications as part of a team in Spider R&D, contributing to end-to-end development and project execution.",
+      skills: ["TypeScript", "AWS", "gRPC", "GraphQL", "Docker", "Kubernetes", "CI/CD", "Smart Contracts"],
       color: "from-orange-400 to-orange-600"
     },
     {
-      year: "2023-Present",
-      title: "Lead Developer & Consultant",
-      company: "Freelance",
+      year: "2024-Present",
+      title: "Open Source Contributions & Bounty Hunting",
+      company: "GitHub, Algora, GitCoin, Opire, IssueHunt",
       type: "work",
-      icon: Briefcase,
-      description: "Leading development teams and providing technical consultation for various clients.",
-      skills: ["Technical Leadership", "Consulting", "Architecture", "Strategy"],
+      description: "Actively contributed to open-source projects by fixing bugs, adding features, and enhancing documentation. Earned my first dollar through bounty hunting by solving real-world challenges and shipping production-level fixes.",
+      skills: ["GitHub", "Stripe", "Turborepo", "Docker", "CI/CD", "Node.js", "Open Source", "Typescript"],
+      color: "from-pink-400 to-pink-600"
+    },
+    {
+      year: "2025-Present",
+      title: "Build Developer Tool",
+      company: "NPM Registry",
+      type: "Contract",
+      description: "Built and published a developer tool (auto-dep-install) to automate dependency installation across projects. Learned to build in public, raised initial support from the dev community, and engaged in early conversations with VCs and open-source maintainers.",
+      skills: ["Open Source","Developer Tools","NPM","Build in Public","CLI","Fundraising","VC Outreach"],      
+      color: "from-pink-400 to-pink-600"
+    },
+    {
+      year: "2025",
+      title: "Developed and Deployed High-Speed Trading Platform",
+      company: "Zerodha Coin",
+      type: "Internship",
+      description: "Built and deployed a high-performance trading website with advanced server optimizations, working with finance teams and BSE (Bombay Stock Exchange) to ensure low latency and reliability for real-time operations.",
+      skills: ["Trading", "FinTech", "Performance Optimization", "Go", "Kubernetes", "docker", "BSE", "Web Development", "GRPC"],
+      color: "from-pink-400 to-pink-600"
+    },
+    {
+      year: "2025-present",
+      title: "Started freelancing & Contract work",
+      company: "Remote",
+      type: "Freelance",
+      description: "Took the leap into freelancing. Bguilt trust with first clients, delivered real-world projects, and learned end-to-end ownership from client calls to deployment.",
+      skills: ["Freelancing", "Client Work", "Fullstack Development", "Deployment", "Remote Work"],
       color: "from-pink-400 to-pink-600"
     }
   ];
@@ -101,10 +123,10 @@ const JourneySection = () => {
           animate={isInView ? "visible" : "hidden"}
         >
           <motion.div variants={itemVariants} className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
+            <h2 className="tracking-[-0.05em] text-center text-[50px] text-white w-[50%] text-center mx-auto">
               My Journey
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="tracking-[-0.05em] text-center text-white/70 pb-4 w-[50%] text-center mx-auto">
               The path that led me to where I am today. Each step has been a learning
               experience that shaped my skills and perspective.
             </p>
@@ -140,13 +162,6 @@ const JourneySection = () => {
                     <Card className="glass border-0 hover:shadow-xl transition-all duration-300 group">
                       <CardContent className="p-6">
                         <div className="flex items-start gap-4">
-                          <motion.div
-                            whileHover={{ rotate: 5 }}
-                            className={`inline-flex items-center justify-center w-12 h-12 rounded-lg bg-gradient-to-r ${step.color} text-white flex-shrink-0`}
-                          >
-                            <step.icon size={24} />
-                          </motion.div>
-                          
                           <div className="flex-1">
                             <div className="flex items-center gap-2 mb-2">
                               <Badge variant="outline" className="text-xs">

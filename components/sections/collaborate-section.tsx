@@ -13,37 +13,6 @@ const CollaborateSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.3 });
 
-  const contactMethods = [
-    {
-      icon: Mail,
-      title: "Email",
-      description: "hello@example.com",
-      action: "Send Email",
-      color: "from-blue-400 to-blue-600"
-    },
-    {
-      icon: MessageCircle,
-      title: "Chat",
-      description: "Let's have a conversation",
-      action: "Start Chat",
-      color: "from-green-400 to-green-600"
-    },
-    {
-      icon: Phone,
-      title: "Call",
-      description: "+1 (555) 123-4567",
-      action: "Schedule Call",
-      color: "from-purple-400 to-purple-600"
-    },
-    {
-      icon: MapPin,
-      title: "Location",
-      description: "San Francisco, CA",
-      action: "View Map",
-      color: "from-orange-400 to-orange-600"
-    }
-  ];
-
   const socialLinks = [
     { icon: Github, href: "#", label: "GitHub" },
     { icon: Linkedin, href: "#", label: "LinkedIn" },
@@ -88,16 +57,16 @@ const CollaborateSection = () => {
           animate={isInView ? "visible" : "hidden"}
         >
           <motion.div variants={itemVariants} className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
+            <h2 className="tracking-[-0.05em] text-center text-[50px] text-white w-[50%] text-center mx-auto">
               Let's Collaborate
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="tracking-[-0.05em] text-center text-white/70 pb-4 w-[50%] text-center mx-auto">
               I'm always excited to work on new projects and help bring ideas to life.
               Let's discuss how we can work together to create something amazing.
             </p>
           </motion.div>
 
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="gap-12">
             {/* Contact Form */}
             <motion.div variants={itemVariants}>
               <Card className="glass border-0 h-full">
@@ -128,122 +97,23 @@ const CollaborateSection = () => {
                         className="glass border-0 min-h-[120px]"
                       />
                     </div>
-                    
-                    <Button
-                      type="submit"
-                      size="lg"
-                      className="w-full bg-gradient-to-r from-blue-400 to-purple-600 hover:from-blue-500 hover:to-purple-700 text-white border-0"
+                    <motion.button
+                      className="text-[13px] w-full px-3 py-2 border border-[rgba(28,28,28,0.2)] border-solid border-[1px] backdrop-blur-[20px] bg-gradient-to-b from-[rgba(51,51,51,0.2)] to-[rgba(31,31,31,0.2)] rounded-[8px] shadow-[rgba(18,73,176,0.65)_0px_0px_0px_-1.75px,rgba(18,73,176,0.3)_0px_0px_0px_-3.5px,rgba(204,209,217,0.18)_0px_0.602187px_0.602187px_-1.25px_inset,rgba(204,209,217,0.16)_0px_2.28853px_2.28853px_-2.5px_inset,rgba(204,209,217,0.06)_0px_10px_10px_-3.75px_inset,rgba(18,73,176,0.68)_0px_0.602187px_1.56569px_-1.16667px_inset,rgba(18,73,176,0.61)_0px_2.28853px_5.95019px_-2.33333px_inset,rgba(18,73,176,0.3)_0px_10px_26px_-3.5px_inset,rgba(18,73,176,0.44)_0px_-0.796192px_0.796192px_-0.6875px_inset,rgba(18,73,176,0.43)_0px_-2.41451px_2.41451px_-1.375px_inset,rgba(18,73,176,0.41)_0px_-6.38265px_6.38265px_-2.0625px_inset,rgba(18,73,176,0.36)_0px_-20px_20px_-2.75px_inset] opacity-100 transition-shadow transition-colors duration-[5000ms] delay-[5000ms] hover:shadow-[rgba(18,73,176,0.68)_0px_0.602187px_1.56569px_-1.16667px,rgba(18,73,176,0.61)_0px_2.28853px_5.95019px_-2.33333px,rgba(18,73,176,0.3)_0px_10px_26px_-3.5px,rgba(204,209,217,0.18)_0px_0.602187px_0.602187px_-1.25px_inset,rgba(204,209,217,0.16)_0px_2.28853px_2.28853px_-2.5px_inset,rgba(204,209,217,0.06)_0px_10px_10px_-3.75px_inset,rgba(18,73,176,0.65)_0px_0px_0px_-1.75px_inset,rgba(18,73,176,0.3)_0px_0px_0px_-3.5px_inset,rgba(18,73,176,0)_0px_-0.796192px_0.796192px_-0.6875px_inset,rgba(18,73,176,0)_0px_-2.41451px_2.41451px_-1.375px_inset,rgba(18,73,176,0)_0px_-6.38265px_6.38265px_-2.0625px_inset,rgba(18,73,176,0)_0px_-20px_20px_-2.75px_inset]"
+                      whileHover={{ 
+                        scale: 1.05,
+                        rotateY: 5,
+                        rotateX: 5,
+                        translateZ: 10
+                      }}
+                      whileTap={{ scale: 0.95 }}
                     >
-                      <Send className="h-4 w-4 mr-2" />
                       Send Message
-                    </Button>
+                    </motion.button>
                   </form>
                 </CardContent>
               </Card>
             </motion.div>
-
-            {/* Contact Info & Services */}
-            <div className="space-y-8">
-              {/* Contact Methods */}
-              <motion.div variants={itemVariants}>
-                <h3 className="text-2xl font-bold mb-6">Get In Touch</h3>
-                <div className="grid sm:grid-cols-2 gap-4">
-                  {contactMethods.map((method, index) => (
-                    <motion.div
-                      key={index}
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                    >
-                      <Card className="glass border-0 cursor-pointer hover:shadow-lg transition-all duration-300 group">
-                        <CardContent className="p-4">
-                          <div className="flex items-center space-x-3">
-                            <div className={`p-2 rounded-lg bg-gradient-to-r ${method.color} text-white`}>
-                              <method.icon size={20} />
-                            </div>
-                            <div className="flex-1">
-                              <h4 className="font-semibold text-sm group-hover:text-blue-400 transition-colors">
-                                {method.title}
-                              </h4>
-                              <p className="text-xs text-muted-foreground">
-                                {method.description}
-                              </p>
-                            </div>
-                          </div>
-                        </CardContent>
-                      </Card>
-                    </motion.div>
-                  ))}
-                </div>
-              </motion.div>
-
-              {/* Services */}
-              <motion.div variants={itemVariants}>
-                <h3 className="text-2xl font-bold mb-6">Services I Offer</h3>
-                <Card className="glass border-0">
-                  <CardContent className="p-6">
-                    <div className="grid sm:grid-cols-2 gap-3">
-                      {services.map((service, index) => (
-                        <motion.div
-                          key={index}
-                          initial={{ opacity: 0, x: -20 }}
-                          animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
-                          transition={{ delay: index * 0.1, duration: 0.5 }}
-                          className="flex items-center space-x-3 p-2 rounded-lg hover:bg-muted/50 transition-colors group"
-                        >
-                          <div className="w-2 h-2 bg-gradient-to-r from-blue-400 to-purple-600 rounded-full flex-shrink-0 group-hover:shadow-lg" />
-                          <span className="text-sm group-hover:text-foreground transition-colors">
-                            {service}
-                          </span>
-                        </motion.div>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-
-              {/* Social Links */}
-              <motion.div variants={itemVariants}>
-                <h3 className="text-2xl font-bold mb-6">Connect With Me</h3>
-                <div className="flex space-x-4">
-                  {socialLinks.map((social, index) => (
-                    <motion.a
-                      key={index}
-                      href={social.href}
-                      whileHover={{ scale: 1.1, rotate: 5 }}
-                      whileTap={{ scale: 0.9 }}
-                      className="flex items-center justify-center w-12 h-12 glass rounded-full hover:shadow-lg transition-all duration-300 group"
-                    >
-                      <social.icon className="h-5 w-5 group-hover:text-blue-400 transition-colors" />
-                    </motion.a>
-                  ))}
-                </div>
-              </motion.div>
-            </div>
           </div>
-
-          {/* CTA Section */}
-          <motion.div variants={itemVariants} className="text-center mt-16">
-            <Card className="glass border-0 max-w-2xl mx-auto">
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-bold mb-4">Ready to Start a Project?</h3>
-                <p className="text-muted-foreground mb-6">
-                  Whether you need a website, mobile app, or technical consultation,
-                  I'm here to help turn your ideas into reality.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button
-                    size="lg"
-                    className="bg-gradient-to-r from-blue-400 to-purple-600 hover:from-blue-500 hover:to-purple-700 text-white border-0"
-                  >
-                    Start a Project
-                  </Button>
-                  <Button variant="outline" size="lg">
-                    View Portfolio
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-          </motion.div>
         </motion.div>
       </div>
     </section>

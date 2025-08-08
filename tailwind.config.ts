@@ -11,6 +11,9 @@ const config: Config = {
     extend: {
       fontFamily: {
         'orbitron': ['var(--font-orbitron)', 'Orbitron', 'monospace'],
+        fancy: ['"Dancing Script"', 'cursive'],
+        inter: ["'Inter'", "sans-serif"],
+        dosis: ['Dosis', 'sans-serif'],
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

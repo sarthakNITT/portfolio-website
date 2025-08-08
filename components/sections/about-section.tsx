@@ -12,24 +12,20 @@ const AboutSection = () => {
 
   const skills = [
     {
-      icon: Code2,
       title: "Full-Stack Development",
-      description: "Proficient in modern web technologies including React, Next.js, Node.js, and TypeScript."
+      description: "Proficient in modern web technologies including Next.js, Node.js, Go, TypeScript and Rust."
     },
     {
-      icon: Palette,
-      title: "UI/UX Design",
-      description: "Creating beautiful, intuitive user interfaces with attention to detail and user experience."
+      title: "DevOps & UI/UX Design",
+      description: "Creating seamless, scalable deployments with CI/CD pipelines while designing intuitive, user-focused interfaces with precision and care."
     },
     {
-      icon: Rocket,
-      title: "Performance Optimization",
-      description: "Building fast, scalable applications with best practices and modern optimization techniques."
+      title: "Blockchain & Smart Contracts",
+      description: "Laying the groundwork in Web3 with hands-on smart contract development and a growing understanding of decentralized technologies."
     },
     {
-      icon: Users,
-      title: "Team Collaboration",
-      description: "Experienced in working with cross-functional teams and managing complex projects."
+      title: "Collaboration & Fundraising",
+      description: "Actively engaging in team collaborations and contributing to successful fundraising initiatives for innovative tech projects."
     }
   ];
 
@@ -54,7 +50,7 @@ const AboutSection = () => {
   };
 
   return (
-    <section id="about" className="py-20 bg-background" ref={ref}>
+    <section id="about" className="pb-20 bg-background" ref={ref}>
       <div className="container mx-auto px-4">
         <motion.div
           variants={containerVariants}
@@ -62,12 +58,11 @@ const AboutSection = () => {
           animate={isInView ? "visible" : "hidden"}
         >
           <motion.div variants={itemVariants} className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
+            <h2 className="text-[50px] text-dosis text-white tracking-[-0.05em] text-center pb-4 w-[50%] text-center mx-auto">
               About Me
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              I'm a creative developer with 5+ years of experience in building digital products.
-              I love turning complex problems into simple, beautiful solutions that make a difference.
+            <p className="text-sm text-dosis text-muted-foreground max-w-3xl mx-auto">
+              I'm a creative developer with 5+ years of experience in building digital products. I love turning complex problems into simple, beautiful solutions that make a difference.
             </p>
           </motion.div>
 
@@ -91,11 +86,9 @@ const AboutSection = () => {
             </motion.div>
 
             <motion.div variants={itemVariants} className="space-y-6">
-              <h3 className="text-2xl font-bold">Let me introduce myself</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                I specialize in creating exceptional digital experiences that combine beautiful design
-                with powerful functionality. My journey in tech started with curiosity and has evolved
-                into a passion for building products that users love.
+              <h3 className="tracking-[-0.05em] text-[25px] text-white">Let me introduce myself</h3>
+              <p className="tracking-[-0.05em] pb-4 text-dosis text-muted-foreground leading-relaxed text-muted-foreground max-w-3xl mx-auto">
+                I'm <span className='font-bold text-white'>Sarthak karode</span>, B-Tech student at NIT Trichy. I build in public and a systems-oriented engineer focused on crafting impactful developer tools and modular infrastructure that scale across ecosystems. My work merges deep technical execution with a product-driven mindset — from designing intuitive DX-first tooling and publishing open-source packages, to leading GTM strategies, fundraising initiatives, and community adoption efforts. I thrive at the intersection of software architecture, developer experience, and global product growth — building with intent to empower the next generation of developers worldwide.
               </p>
               <p className="text-muted-foreground leading-relaxed">
                 When I'm not coding, you can find me exploring new technologies, contributing to
@@ -103,7 +96,7 @@ const AboutSection = () => {
                 blogs and talks.
               </p>
               <div className="flex flex-wrap gap-3">
-                {['React', 'Next.js', 'TypeScript', 'Node.js', 'Python', 'AWS'].map((tech) => (
+                {['React.js', 'Next.js', 'Node.js', 'Go', 'PostgreSQL', 'Docker', 'Kubernetes', 'AWS', 'Rust', 'Solidity'].map((tech) => (
                   <motion.span
                     key={tech}
                     whileHover={{ scale: 1.1 }}
@@ -121,13 +114,7 @@ const AboutSection = () => {
               <motion.div key={index} variants={itemVariants}>
                 <Card className="h-full glass border-0 hover:shadow-lg transition-all duration-300 group">
                   <CardContent className="p-6 text-center">
-                    <motion.div
-                      whileHover={{ scale: 1.1, rotate: 5 }}
-                      className="inline-flex items-center justify-center w-16 h-16 mb-4 bg-gradient-to-br from-blue-400 to-purple-600 rounded-lg text-white"
-                    >
-                      <skill.icon size={28} />
-                    </motion.div>
-                    <h3 className="text-lg font-semibold mb-2 group-hover:text-blue-400 transition-colors">
+                    <h3 className="tracking-[-0.05em] text-center text-white pb-4 w-[50%] text-center mx-auto">
                       {skill.title}
                     </h3>
                     <p className="text-sm text-muted-foreground">

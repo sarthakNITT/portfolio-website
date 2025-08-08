@@ -29,10 +29,10 @@ export default function Navigation() {
           <motion.div
             initial={{ opacity: 0, rotateY: -180 }}
             animate={{ opacity: 1, rotateY: 0 }}
-            className="text-2xl font-bold text-primary animate-glow transform-3d"
+            className="text-2xl font-bold font-orbitron text-transparent bg-clip-text bg-gradient-to-r from-[#1e4e8c] to-[#3788d8] animate-glow transform-3d"
             whileHover={{ rotateY: 10, scale: 1.1 }}
           >
-            SK
+            Sarthak Karode
           </motion.div>
           
           {/* Desktop Navigation */}
@@ -41,7 +41,7 @@ export default function Navigation() {
               <motion.button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
-                className="hover:text-primary transition-all duration-300 transform-3d"
+                className="hover:text-[#3788d8] transition-all duration-300 transform-103"
                 whileHover={{ 
                   scale: 1.05,
                   rotateX: 5,

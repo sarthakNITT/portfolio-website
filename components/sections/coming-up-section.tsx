@@ -13,32 +13,21 @@ const ComingUpSection = () => {
 
   const upcomingProjects = [
     {
-      title: "AI-Powered Code Review Tool",
-      description: "Building an intelligent code review assistant using machine learning to help developers write better code.",
-      timeline: "Q2 2024",
+      title: "Uptime & Error Monitor - Self-Hosted SaaS for Developers",
+      description: "Building a developer-focused uptime and error monitoring SaaS as an open-source alternative to Pingdom, with real-time alerts via email. Architected for self-hosting and scalability, with Dockerized deployment. Actively maintained, collaborated with developers for feedback, and explored early-stage fundraising to scale the hosted version.",
+      timeline: "2026",
       status: "In Progress",
-      progress: 75,
-      icon: Zap,
+      progress: 25,
       color: "from-blue-400 to-blue-600"
     },
     {
-      title: "Open Source Design System",
-      description: "Creating a comprehensive design system library for React applications with accessibility in mind.",
-      timeline: "Q3 2024",
+      title: " Dev Error Tracker CLI - NPM Tool for Debug Logging",
+      description: "Creating an open-source CLI tool that auto-logs errors, tracks code changes, and documents debugging workflows in real time. Designed for developer productivity and open collaboration. Grew organically through build-in-public efforts, with support from early contributors and community-driven feedback.",
+      timeline: "2026",
       status: "Planning",
-      progress: 25,
-      icon: Target,
-      color: "from-purple-400 to-purple-600"
+      progress: 10,
+      color: "from-blue-400 to-blue-600"
     },
-    {
-      title: "Developer Conference Talk",
-      description: "Speaking at ReactConf about 'The Future of Web Development' and modern JavaScript frameworks.",
-      timeline: "September 2024",
-      status: "Scheduled",
-      progress: 100,
-      icon: Calendar,
-      color: "from-green-400 to-green-600"
-    }
   ];
 
   const goals = [
@@ -71,7 +60,7 @@ const ComingUpSection = () => {
   };
 
   return (
-    <section id="coming-up" className="py-20 bg-muted/30" ref={ref}>
+    <section id="coming-up" className="pt-20 bg-muted/30" ref={ref}>
       <div className="container mx-auto px-4">
         <motion.div
           variants={containerVariants}
@@ -79,10 +68,10 @@ const ComingUpSection = () => {
           animate={isInView ? "visible" : "hidden"}
         >
           <motion.div variants={itemVariants} className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
+            <h2 className="tracking-[-0.05em] text-center text-[50px] text-white w-[50%] text-center mx-auto">
               Coming Up Next
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="tracking-[-0.05em] text-center text-white/70 pb-4 w-[50%] text-center mx-auto">
               Exciting projects and initiatives I'm working on or planning for the near future.
               Stay tuned for updates!
             </p>
@@ -95,13 +84,6 @@ const ComingUpSection = () => {
                 <Card className="glass border-0 hover:shadow-xl transition-all duration-300 group">
                   <CardContent className="p-6">
                     <div className="flex flex-col lg:flex-row lg:items-center gap-6">
-                      <motion.div
-                        whileHover={{ scale: 1.1, rotate: 5 }}
-                        className={`inline-flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-r ${project.color} text-white flex-shrink-0`}
-                      >
-                        <project.icon size={28} />
-                      </motion.div>
-                      
                       <div className="flex-1">
                         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-3">
                           <h3 className="text-xl font-bold group-hover:text-blue-400 transition-colors">
@@ -146,38 +128,6 @@ const ComingUpSection = () => {
               </motion.div>
             ))}
           </div>
-
-          {/* 2024 Goals */}
-          <motion.div variants={itemVariants}>
-            <Card className="glass border-0">
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-bold mb-6 text-center">
-                  <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
-                    2024 Goals
-                  </span>
-                </h3>
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {goals.map((goal, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
-                      transition={{ delay: index * 0.1, duration: 0.5 }}
-                      className="flex items-center space-x-3 p-3 rounded-lg hover:bg-muted/50 transition-colors group"
-                    >
-                      <motion.div
-                        whileHover={{ scale: 1.2 }}
-                        className="w-2 h-2 bg-gradient-to-r from-blue-400 to-purple-600 rounded-full flex-shrink-0 group-hover:shadow-lg"
-                      />
-                      <span className="text-sm group-hover:text-foreground transition-colors">
-                        {goal}
-                      </span>
-                    </motion.div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          </motion.div>
         </motion.div>
       </div>
     </section>

@@ -205,20 +205,22 @@ export default function HeroSection() {
           className="transform-3d"
         >
           <motion.div
-            className="text-3xl md:text-5xl font-bold mb-4 leading-tight"
+            className="text-3xl md:text-5xl font-bold mb-4 leading-tight flex items-center justify-center gap-2"
             initial={{ opacity: 0, y: 20, rotateX: -15 }}
             animate={{ opacity: 1, y: 0, rotateX: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
           >
-            <span className="text-white block mb-2">Hi, I'm</span>
-            <div className="text-primary h-16 flex items-center justify-center">
+            
+            <span className="font-dosis text-[60px] tracking-[-0.04em] leading-[1.3em] text-white">Building</span>
+            <div className="text-transparent text-[60px] bg-clip-text bg-gradient-to-r from-[#1249B0] via-[#3A5CCC] to-[#1249B0]">
               <Typewriter
                 options={{
                   strings: [
-                    'Full Stack Developer',
-                    'DevOps Engineer', 
+                    'Developer Tools',
+                    'Saas Applications',
+                    'Operation Tools', 
                     'Cloud Architect',
-                    'Web3 Developer'
+                    'Smart Contracts',
                   ],
                   autoStart: true,
                   loop: true,
@@ -230,12 +232,12 @@ export default function HeroSection() {
             </div>
           </motion.div>
           <motion.p
-            className="text-lg md:text-xl text-gray-400 mb-6 max-w-2xl mx-auto"
+            className="tracking-[-0.05em] text-center text-white/70 pb-4 w-[50%] text-center mx-auto"
             initial={{ opacity: 0, y: 20, rotateX: -10 }}
             animate={{ opacity: 1, y: 0, rotateX: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
           >
-            Building scalable applications and infrastructure with cutting-edge technologies
+            Crafting cutting-edge developer tools and scalable infrastructure, with a focus on global impact through strategic innovation, open-source publishing, and community-driven growth.
           </motion.p>
           <motion.div
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
@@ -245,7 +247,7 @@ export default function HeroSection() {
           >
             <motion.button
               onClick={() => scrollToSection("#projects")}
-              className="bg-primary hover:bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform-3d"
+              className="text-[13px] px-3 py-2 border border-[rgba(28,28,28,0.2)] border-solid border-[1px] backdrop-blur-[20px] bg-gradient-to-b from-[rgba(51,51,51,0.2)] to-[rgba(31,31,31,0.2)] rounded-[8px] shadow-[rgba(18,73,176,0.65)_0px_0px_0px_-1.75px,rgba(18,73,176,0.3)_0px_0px_0px_-3.5px,rgba(204,209,217,0.18)_0px_0.602187px_0.602187px_-1.25px_inset,rgba(204,209,217,0.16)_0px_2.28853px_2.28853px_-2.5px_inset,rgba(204,209,217,0.06)_0px_10px_10px_-3.75px_inset,rgba(18,73,176,0.68)_0px_0.602187px_1.56569px_-1.16667px_inset,rgba(18,73,176,0.61)_0px_2.28853px_5.95019px_-2.33333px_inset,rgba(18,73,176,0.3)_0px_10px_26px_-3.5px_inset,rgba(18,73,176,0.44)_0px_-0.796192px_0.796192px_-0.6875px_inset,rgba(18,73,176,0.43)_0px_-2.41451px_2.41451px_-1.375px_inset,rgba(18,73,176,0.41)_0px_-6.38265px_6.38265px_-2.0625px_inset,rgba(18,73,176,0.36)_0px_-20px_20px_-2.75px_inset] opacity-100 transition-shadow transition-colors duration-[5000ms] delay-[5000ms] hover:shadow-[rgba(18,73,176,0.68)_0px_0.602187px_1.56569px_-1.16667px,rgba(18,73,176,0.61)_0px_2.28853px_5.95019px_-2.33333px,rgba(18,73,176,0.3)_0px_10px_26px_-3.5px,rgba(204,209,217,0.18)_0px_0.602187px_0.602187px_-1.25px_inset,rgba(204,209,217,0.16)_0px_2.28853px_2.28853px_-2.5px_inset,rgba(204,209,217,0.06)_0px_10px_10px_-3.75px_inset,rgba(18,73,176,0.65)_0px_0px_0px_-1.75px_inset,rgba(18,73,176,0.3)_0px_0px_0px_-3.5px_inset,rgba(18,73,176,0)_0px_-0.796192px_0.796192px_-0.6875px_inset,rgba(18,73,176,0)_0px_-2.41451px_2.41451px_-1.375px_inset,rgba(18,73,176,0)_0px_-6.38265px_6.38265px_-2.0625px_inset,rgba(18,73,176,0)_0px_-20px_20px_-2.75px_inset]"
               whileHover={{ 
                 scale: 1.05,
                 rotateY: 5,
@@ -258,7 +260,7 @@ export default function HeroSection() {
             </motion.button>
             <motion.button
               onClick={() => scrollToSection("#contact")}
-              className="border border-primary text-primary hover:bg-primary hover:text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform-3d"
+              className="gap-1 flex flex-row items-center px-3 py-2 text-[13px] border border-[rgba(28,28,28,0.2)] border-solid border-[1px] backdrop-blur-[20px] bg-gradient-to-b from-[rgba(69,69,69,0.2)] to-[rgb(31,31,31)] rounded-[8px] shadow-[rgba(72,88,138,0.68)_0px_0.602187px_1.56569px_-1.16667px_inset,rgba(72,88,138,0.61)_0px_2.28853px_5.95019px_-2.33333px_inset,rgba(72,88,138,0.3)_0px_10px_26px_-3.5px_inset,rgba(204,209,217,0.18)_0px_0.602187px_0.602187px_-1.25px_inset,rgba(204,209,217,0.16)_0px_2.28853px_2.28853px_-2.5px_inset,rgba(204,209,217,0.06)_0px_10px_10px_-3.75px_inset,rgba(72,88,138,0.65)_0px_0px_0px_-1.75px,rgba(72,88,138,0.3)_0px_0px_0px_-3.5px,rgba(72,88,138,0.58)_0px_-0.796192px_0.796192px_-0.9375px_inset,rgba(72,88,138,0.55)_0px_-2.41451px_2.41451px_-1.875px_inset,rgba(72,88,138,0.47)_0px_-6.38265px_6.38265px_-2.8125px_inset,rgba(72,88,138,0.2)_0px_-20px_20px_-3.75px_inset] opacity-100"
               whileHover={{ 
                 scale: 1.05,
                 rotateY: -5,
@@ -267,7 +269,15 @@ export default function HeroSection() {
               }}
               whileTap={{ scale: 0.95 }}
             >
-              Get In Touch
+              GitHub 
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                className="w-4 h-4 inline-block fill-white flex-shrink-0 select-none"
+                aria-hidden="true"
+              >
+                <path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2 0 1.9 1.2 1.9 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6 0-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8 0 3.2.9.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1 .9 2.2v3.3c0 .3.1.7.8.6A12 12 0 0 0 12 .3" />
+              </svg>
             </motion.button>
           </motion.div>
         </motion.div>
