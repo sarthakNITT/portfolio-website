@@ -16,7 +16,7 @@ const JourneySection = () => {
       year: "2023",
       title: "B-Tech in Production Engineering",
       company: "NIT Trichy",
-      type: "education",
+      type: "Education",
       description: "• Pursuing B-Tech with CS Minor, focusing on software development and algorithms.",
       skills: ["Data Structures", "Algorithms", "Web Development", "Database Design", "Computer Networks", "Operating Systems", "System Design"],
       color: "from-blue-400 to-blue-600"
@@ -34,7 +34,7 @@ const JourneySection = () => {
       year: "2023-2024",
       title: "All-Stack Developer (Web & Mobile)",
       company: "100xCohort",
-      type: "Contract",
+      type: "Education",
       description: "Leaned full-stack development with a focus on web and mobile applications, including React Native, Xcode, Android Studio.",
       skills: ["Node.js", "MongoDB", "React", "React Native", "postgreSQL", "Tailwind CSS", "Next.js", "prisma", "Flutter", "Swift", "kotlin"],
       color: "from-purple-400 to-purple-600"
@@ -43,7 +43,7 @@ const JourneySection = () => {
       year: "2024-present",
       title: "Application Developer at Spider R&D",
       company: "Spider R&D",
-      type: "work",
+      type: "Work",
       description: "Built and deployed scalable applications as part of a team in Spider R&D, contributing to end-to-end development and project execution.",
       skills: ["TypeScript", "AWS", "gRPC", "GraphQL", "Docker", "Kubernetes", "CI/CD", "Smart Contracts"],
       color: "from-orange-400 to-orange-600"
@@ -52,7 +52,7 @@ const JourneySection = () => {
       year: "2024-Present",
       title: "Open Source Contributions & Bounty Hunting",
       company: "GitHub, Algora, GitCoin, Opire, IssueHunt",
-      type: "work",
+      type: "Open Source",
       description: "Actively contributed to open-source projects by fixing bugs, adding features, and enhancing documentation. Earned my first dollar through bounty hunting by solving real-world challenges and shipping production-level fixes.",
       skills: ["GitHub", "Stripe", "Turborepo", "Docker", "CI/CD", "Node.js", "Open Source", "Typescript"],
       color: "from-pink-400 to-pink-600"
@@ -167,8 +167,8 @@ const JourneySection = () => {
                               <Badge variant="outline" className="text-xs">
                                 {step.year}
                               </Badge>
-                              <Badge variant={step.type === 'education' ? 'secondary' : 'default'}>
-                                {step.type === 'education' ? 'Education' : 'Work'}
+                              <Badge variant='default'>
+                                {step.type}
                               </Badge>
                             </div>
                             

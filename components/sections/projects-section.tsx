@@ -37,12 +37,28 @@ const ProjectsSection = () => {
       live: "https://sarthakwallet.vercel.app"
     },
     {
-      title: "Social Media Analytics",
-      description: "Analytics dashboard for social media metrics with interactive charts.",
-      image: "https://images.pexels.com/photos/590020/pexels-photo-590020.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=300&w=500",
-      tags: ["React", "D3.js", "Python", "FastAPI"],
-      github: "#",
-      live: "#"
+      title: "Chit Chat",
+      description: "Developed a full-featured chat platform supporting real-time communication across user-created rooms. Users can create or join chat rooms and also interact with an integrated AI chatbot within the same interface. Gained hands-on experience with Redis for in-memory data caching.",
+      image: "/chitchat.png",
+      tags: ["React", "Vite", "Typescript", "MongoDB", "Redis", "Websockets", "Memory Caching", "AI Chatbot", "Real-time Communication", "Chat Rooms"],
+      github: "https://github.com/sarthakNITT/ChitChatFe",
+      live: "https://chit-chat-fe-one.vercel.app"
+    },
+    {
+      title: "Kali Wealth",
+      description: "The only Investment you'll ever need End-to-end personalized support with tools at every stage of your investment journey.",
+      image: "/kaliWealth.png",
+      tags: ["React", "React Native", "Typescript", "MongoDB", "Memory Caching"],
+      github: "https://github.com/sarthakNITT/kaliWealth",
+      live: "https://www.kaliwealth.in"
+    },
+    {
+      title: "Lynx",
+      description: "Introducing LynxGPT: Your Campus Companion! Say hello to the newest addition to the Lynx app - LynxGPT! Now, getting all the info you need for campus life is as easy as sending a message. Say goodbye to endless searches and hello to instant answers. LynxGPT is here to make your campus experience smoother than ever",
+      image: "/lynx.png",
+      tags: ["React Native", "Typescript", "GRPC"],
+      github: "https://github.com/sarthakNITT/Lynx2demo",
+      live: "https://play.google.com/store/apps/details?id=org.spider.nittapp&hl=en_IN"
     }
   ];
 
