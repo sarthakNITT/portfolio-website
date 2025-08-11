@@ -13,20 +13,20 @@ const ProjectsSection = () => {
 
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description: "A full-stack e-commerce solution with React, Node.js, and Stripe integration.",
-      image: "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=300&w=500",
-      tags: ["React", "Node.js", "MongoDB", "Stripe"],
-      github: "#",
-      live: "#"
+      title: "Auto-dep-install",
+      description: "A Node.js command-line tool that automatically installs missing packages, updates outdated ones, and removes unused dependencies as you work.",
+      image: "/auto-dep-install.png",
+      tags: ["React", "Node.js", "React Native", "CLI Tool", "Package Management",  "Typescript", "NPM", "Yarn", "PNPM", "Dependency Management"],
+      github: "https://github.com/sarthakNITT/auto-dep-install",
+      live: "https://www.npmjs.com/package/auto-dep-install"
     },
     {
-      title: "Task Management App",
-      description: "A collaborative task management application with real-time updates.",
-      image: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=300&w=500",
-      tags: ["Next.js", "Prisma", "PostgreSQL", "Socket.io"],
-      github: "#",
-      live: "#"
+      title: "Canvas-draw",
+      description: " A web-based drawing tool inspired by Excalidraw, featuring hand-drawn-style diagrams, freehand drawing, shape tools, undo/redo using Next.Js/TypeScript.",
+      image: "/canvas.png",
+      tags: ["Next.js", "Prisma", "PostgreSQL", "Websocket", "TypeScript", "Tailwind CSS", "Realtime Collaboration", "Drawing Tool"],
+      github: "https://github.com/sarthakNITT/canvas-app",
+      live: "https://canvaslanding.vercel.app"
     },
     {
       title: "Weather Dashboard",
@@ -92,10 +92,10 @@ const ProjectsSection = () => {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <Button size="sm" variant="secondary" className="h-8 w-8 p-0">
+                      <Button size="sm" variant="secondary" className="h-8 w-8 p-0" onClick={() => window.open(project.github, "_blank")}>
                         <Github className="h-4 w-4" />
                       </Button>
-                      <Button size="sm" variant="secondary" className="h-8 w-8 p-0">
+                      <Button size="sm" variant="secondary" className="h-8 w-8 p-0" onClick={() => window.open(project.live, "_blank")}>
                         <ExternalLink className="h-4 w-4" />
                       </Button>
                     </div>
@@ -123,21 +123,6 @@ const ProjectsSection = () => {
               </motion.div>
             ))}
           </div>
-
-          <motion.div variants={itemVariants} className="text-center mt-12">
-            <motion.button
-              className="text-[13px] px-3 py-2 border border-[rgba(28,28,28,0.2)] border-solid border-[1px] backdrop-blur-[20px] bg-gradient-to-b from-[rgba(51,51,51,0.2)] to-[rgba(31,31,31,0.2)] rounded-[8px] shadow-[rgba(18,73,176,0.65)_0px_0px_0px_-1.75px,rgba(18,73,176,0.3)_0px_0px_0px_-3.5px,rgba(204,209,217,0.18)_0px_0.602187px_0.602187px_-1.25px_inset,rgba(204,209,217,0.16)_0px_2.28853px_2.28853px_-2.5px_inset,rgba(204,209,217,0.06)_0px_10px_10px_-3.75px_inset,rgba(18,73,176,0.68)_0px_0.602187px_1.56569px_-1.16667px_inset,rgba(18,73,176,0.61)_0px_2.28853px_5.95019px_-2.33333px_inset,rgba(18,73,176,0.3)_0px_10px_26px_-3.5px_inset,rgba(18,73,176,0.44)_0px_-0.796192px_0.796192px_-0.6875px_inset,rgba(18,73,176,0.43)_0px_-2.41451px_2.41451px_-1.375px_inset,rgba(18,73,176,0.41)_0px_-6.38265px_6.38265px_-2.0625px_inset,rgba(18,73,176,0.36)_0px_-20px_20px_-2.75px_inset] opacity-100 transition-shadow transition-colors duration-[5000ms] delay-[5000ms] hover:shadow-[rgba(18,73,176,0.68)_0px_0.602187px_1.56569px_-1.16667px,rgba(18,73,176,0.61)_0px_2.28853px_5.95019px_-2.33333px,rgba(18,73,176,0.3)_0px_10px_26px_-3.5px,rgba(204,209,217,0.18)_0px_0.602187px_0.602187px_-1.25px_inset,rgba(204,209,217,0.16)_0px_2.28853px_2.28853px_-2.5px_inset,rgba(204,209,217,0.06)_0px_10px_10px_-3.75px_inset,rgba(18,73,176,0.65)_0px_0px_0px_-1.75px_inset,rgba(18,73,176,0.3)_0px_0px_0px_-3.5px_inset,rgba(18,73,176,0)_0px_-0.796192px_0.796192px_-0.6875px_inset,rgba(18,73,176,0)_0px_-2.41451px_2.41451px_-1.375px_inset,rgba(18,73,176,0)_0px_-6.38265px_6.38265px_-2.0625px_inset,rgba(18,73,176,0)_0px_-20px_20px_-2.75px_inset]"
-              whileHover={{ 
-                scale: 1.05,
-                rotateY: 5,
-                rotateX: 5,
-                translateZ: 10
-              }}
-              whileTap={{ scale: 0.95 }}
-            >
-              View All Projects
-            </motion.button>
-          </motion.div>
         </motion.div>
       </div>
     </section>
