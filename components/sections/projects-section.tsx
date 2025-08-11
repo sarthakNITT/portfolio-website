@@ -29,12 +29,12 @@ const ProjectsSection = () => {
       live: "https://canvaslanding.vercel.app"
     },
     {
-      title: "Weather Dashboard",
-      description: "A responsive weather dashboard with location-based forecasts and data visualization.",
-      image: "https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=300&w=500",
-      tags: ["Vue.js", "Chart.js", "REST API", "PWA"],
-      github: "#",
-      live: "#"
+      title: "Crypto Vault",
+      description: "A lightweight Solana wallet application that allows users to create wallets and accounts, manage tokens, and check balances seamlessly.",
+      image: "/cryptoVault.png",
+      tags: ["React.js", "Vite", "bip39", "ed25519-hd-key", "tweetnacl", "@solana/web3.js", "@solana/spl-token", "TailwindCss", "Typescript"],
+      github: "https://github.com/sarthakNITT/Wallet-blockchain",
+      live: "https://sarthakwallet.vercel.app"
     },
     {
       title: "Social Media Analytics",
