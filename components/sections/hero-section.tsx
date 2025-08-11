@@ -259,7 +259,7 @@ export default function HeroSection() {
               View My Work
             </motion.button>
             <motion.button
-              onClick={() => scrollToSection("#contact")}
+              onClick={() => window.open("https://github.com/sarthakNITT", "_blank")}
               className="gap-1 flex flex-row items-center px-3 py-2 text-[13px] border border-[rgba(28,28,28,0.2)] border-solid border-[1px] backdrop-blur-[20px] bg-gradient-to-b from-[rgba(69,69,69,0.2)] to-[rgb(31,31,31)] rounded-[8px] shadow-[rgba(72,88,138,0.68)_0px_0.602187px_1.56569px_-1.16667px_inset,rgba(72,88,138,0.61)_0px_2.28853px_5.95019px_-2.33333px_inset,rgba(72,88,138,0.3)_0px_10px_26px_-3.5px_inset,rgba(204,209,217,0.18)_0px_0.602187px_0.602187px_-1.25px_inset,rgba(204,209,217,0.16)_0px_2.28853px_2.28853px_-2.5px_inset,rgba(204,209,217,0.06)_0px_10px_10px_-3.75px_inset,rgba(72,88,138,0.65)_0px_0px_0px_-1.75px,rgba(72,88,138,0.3)_0px_0px_0px_-3.5px,rgba(72,88,138,0.58)_0px_-0.796192px_0.796192px_-0.9375px_inset,rgba(72,88,138,0.55)_0px_-2.41451px_2.41451px_-1.875px_inset,rgba(72,88,138,0.47)_0px_-6.38265px_6.38265px_-2.8125px_inset,rgba(72,88,138,0.2)_0px_-20px_20px_-3.75px_inset] opacity-100"
               whileHover={{ 
                 scale: 1.05,
