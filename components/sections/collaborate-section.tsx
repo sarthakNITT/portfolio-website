@@ -4,10 +4,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Mail, MessageCircle, Phone, MapPin, Send, Github, Linkedin, Twitter } from 'lucide-react';
+import { Mail, Send, Github, Linkedin, Twitter } from 'lucide-react';
 
 const CollaborateSection = () => {
   const ref = useRef(null);
@@ -67,49 +64,34 @@ const CollaborateSection = () => {
           </motion.div>
 
           <div className="gap-12">
-            {/* Contact Form */}
             <motion.div variants={itemVariants}>
               <Card className="glass border-0 h-full">
                 <CardContent className="p-4 sm:p-8">
-                  <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">Send a Message</h3>
-                  
-                  <form className="space-y-4 sm:space-y-6">
-                    <div className="grid sm:grid-cols-2 gap-4">
-                      <div>
-                        <label className="block text-sm font-medium mb-2">Name</label>
-                        <Input placeholder="Your name" className="glass border-0" />
-                      </div>
-                      <div>
-                        <label className="block text-sm font-medium mb-2">Email</label>
-                        <Input type="email" placeholder="your@email.com" className="glass border-0" />
-                      </div>
-                    </div>
-                    
-                    <div>
-                      <label className="block text-sm font-medium mb-2">Subject</label>
-                      <Input placeholder="Project discussion" className="glass border-0" />
-                    </div>
-                    
-                    <div>
-                      <label className="block text-sm font-medium mb-2">Message</label>
-                      <Textarea
-                        placeholder="Tell me about your project or idea..."
-                        className="glass border-0 min-h-[120px]"
-                      />
+                  <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">Get in Touch</h3>
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                    <div className="flex items-center gap-3 text-white/90">
+                      <Mail className="w-5 h-5" />
+                      <span className="text-sm sm:text-base select-all">sarthakkarodework@gmail.com</span>
                     </div>
                     <motion.button
-                      className="text-[13px] w-full px-3 py-2 border border-[rgba(28,28,28,0.2)] border-solid border-[1px] backdrop-blur-[20px] bg-gradient-to-b from-[rgba(51,51,51,0.2)] to-[rgba(31,31,31,0.2)] rounded-[8px] shadow-[rgba(18,73,176,0.65)_0px_0px_0px_-1.75px,rgba(18,73,176,0.3)_0px_0px_0px_-3.5px,rgba(204,209,217,0.18)_0px_0.602187px_0.602187px_-1.25px_inset,rgba(204,209,217,0.16)_0px_2.28853px_2.28853px_-2.5px_inset,rgba(204,209,217,0.06)_0px_10px_10px_-3.75px_inset,rgba(18,73,176,0.68)_0px_0.602187px_1.56569px_-1.16667px_inset,rgba(18,73,176,0.61)_0px_2.28853px_5.95019px_-2.33333px_inset,rgba(18,73,176,0.3)_0px_10px_26px_-3.5px_inset,rgba(18,73,176,0.44)_0px_-0.796192px_0.796192px_-0.6875px_inset,rgba(18,73,176,0.43)_0px_-2.41451px_2.41451px_-1.375px_inset,rgba(18,73,176,0.41)_0px_-6.38265px_6.38265px_-2.0625px_inset,rgba(18,73,176,0.36)_0px_-20px_20px_-2.75px_inset] opacity-100 transition-shadow transition-colors duration-[5000ms] delay-[5000ms] hover:shadow-[rgba(18,73,176,0.68)_0px_0.602187px_1.56569px_-1.16667px,rgba(18,73,176,0.61)_0px_2.28853px_5.95019px_-2.33333px,rgba(18,73,176,0.3)_0px_10px_26px_-3.5px,rgba(204,209,217,0.18)_0px_0.602187px_0.602187px_-1.25px_inset,rgba(204,209,217,0.16)_0px_2.28853px_2.28853px_-2.5px_inset,rgba(204,209,217,0.06)_0px_10px_10px_-3.75px_inset,rgba(18,73,176,0.65)_0px_0px_0px_-1.75px_inset,rgba(18,73,176,0.3)_0px_0px_0px_-3.5px_inset,rgba(18,73,176,0)_0px_-0.796192px_0.796192px_-0.6875px_inset,rgba(18,73,176,0)_0px_-2.41451px_2.41451px_-1.375px_inset,rgba(18,73,176,0)_0px_-6.38265px_6.38265px_-2.0625px_inset,rgba(18,73,176,0)_0px_-20px_20px_-2.75px_inset]"
+                      onClick={() => {
+                        const to = 'sarthakkarodework@gmail.com';
+                        const url = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(to)}`;
+                        window.open(url, '_blank', 'noopener');
+                      }}
+                      className="gap-1 flex flex-row items-center px-3 py-2 text-[13px] border border-[rgba(28,28,28,0.2)] border-solid border-[1px] backdrop-blur-[20px] bg-gradient-to-b from-[rgba(69,69,69,0.2)] to-[rgb(31,31,31)] rounded-[8px] shadow-[rgba(72,88,138,0.68)_0px_0.602187px_1.56569px_-1.16667px_inset,rgba(72,88,138,0.61)_0px_2.28853px_5.95019px_-2.33333px_inset,rgba(72,88,138,0.3)_0px_10px_26px_-3.5px_inset,rgba(204,209,217,0.18)_0px_0.602187px_0.602187px_-1.25px_inset,rgba(204,209,217,0.16)_0px_2.28853px_2.28853px_-2.5px_inset,rgba(204,209,217,0.06)_0px_10px_10px_-3.75px_inset,rgba(72,88,138,0.65)_0px_0px_0px_-1.75px,rgba(72,88,138,0.3)_0px_0px_0px_-3.5px,rgba(72,88,138,0.58)_0px_-0.796192px_0.796192px_-0.9375px_inset,rgba(72,88,138,0.55)_0px_-2.41451px_2.41451px_-1.875px_inset,rgba(72,88,138,0.47)_0px_-6.38265px_6.38265px_-2.8125px_inset,rgba(72,88,138,0.2)_0px_-20px_20px_-3.75px_inset] opacity-100"
                       whileHover={{ 
                         scale: 1.05,
-                        rotateY: 5,
+                        rotateY: -5,
                         rotateX: 5,
                         translateZ: 10
                       }}
                       whileTap={{ scale: 0.95 }}
                     >
-                      Send Message
+                      Send mail to Sarthak Karode
+                      <Send className="w-4 h-4" />
                     </motion.button>
-                  </form>
+                  </div>
                 </CardContent>
               </Card>
             </motion.div>
