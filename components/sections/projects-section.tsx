@@ -13,6 +13,22 @@ const ProjectsSection = () => {
 
   const projects = [
     {
+      title: "Deploy Now",
+      description: "A platform to deploy React (Vite and Core) apps with custom domains, automated builds, and instant hosting—similar to Vercel.",
+      image: "/deploy-now.png",
+      tags: ["Turborepo", "Node.js", "Next.js", "Typescript", "bun", "Cloudflare", "AWS", "Prisma", "Framer Motion", "Zustand", "Redis", "Microservices"],
+      github: "https://github.com/sarthakNITT/deployNow",
+      live: "#"
+    },
+    {
+      title: "Uptime",
+      description: "A simple tool that tracks whether your websites and APIs are up or down, showing real-time status, response times, and downtime history.",
+      image: "/uptime.png",
+      tags: ["Next.js", "Node.js", "Prisma", "Typescript", "bun", "Framer Motion", "RESTful API", "Dashboard Analytics", "SMTP Integration", "API Monitoring", "Multi-tenant SaaS"],
+      github: "https://github.com/sarthakNITT/portfolio-website",
+      live: "#"
+    },
+    {
       title: "Auto-dep-install",
       description: "A Node.js command-line tool that automatically installs missing packages, updates outdated ones, and removes unused dependencies as you work.",
       image: "/auto-dep-install.png",

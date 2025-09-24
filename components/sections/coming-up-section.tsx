@@ -13,8 +13,8 @@ const ComingUpSection = () => {
 
   const upcomingProjects = [
     {
-      title: "Uptime & Error Monitor - Self-Hosted SaaS for Developers",
-      description: "Building a developer-focused uptime and error monitoring SaaS as an open-source alternative to Pingdom, with real-time alerts via email. Architected for self-hosting and scalability, with Dockerized deployment. Actively maintained, collaborated with developers for feedback, and explored early-stage fundraising to scale the hosted version.",
+      title: "Meet-all",
+      description: "A real-time communication platform where users can talk with multiple people, chat, share files, and present their screen.",
       timeline: "2026",
       status: "In Progress",
       progress: 25,
