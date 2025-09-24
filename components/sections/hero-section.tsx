@@ -197,7 +197,7 @@ export default function HeroSection() {
         </div>
       )}
       
-      <div className="container mx-auto px-6 text-center relative z-20">
+      <div className="container mx-auto px-4 sm:px-6 text-center relative z-20">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -205,14 +205,14 @@ export default function HeroSection() {
           className="transform-3d"
         >
           <motion.div
-            className="text-3xl md:text-5xl font-bold mb-4 leading-tight flex items-center justify-center gap-2"
+            className="text-2xl sm:text-4xl md:text-5xl font-bold mb-4 leading-tight flex flex-wrap items-center justify-center gap-2"
             initial={{ opacity: 0, y: 20, rotateX: -15 }}
             animate={{ opacity: 1, y: 0, rotateX: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
           >
             
-            <span className="font-dosis text-[60px] tracking-[-0.04em] leading-[1.3em] text-white">Building</span>
-            <div className="text-transparent text-[60px] bg-clip-text bg-gradient-to-r from-[#1249B0] via-[#3A5CCC] to-[#1249B0]">
+            <span className="font-dosis text-[36px] sm:text-[48px] md:text-[60px] tracking-[-0.04em] leading-[1.2em] text-white">Building</span>
+            <div className="text-transparent text-[36px] sm:text-[48px] md:text-[60px] bg-clip-text bg-gradient-to-r from-[#1249B0] via-[#3A5CCC] to-[#1249B0]">
               <Typewriter
                 options={{
                   strings: [
@@ -232,7 +232,7 @@ export default function HeroSection() {
             </div>
           </motion.div>
           <motion.p
-            className="tracking-[-0.05em] text-center text-white/70 pb-4 w-[50%] text-center mx-auto"
+            className="tracking-[-0.02em] text-center text-white/70 pb-4 max-w-[48rem] w-full px-2 sm:px-0 text-center mx-auto text-sm sm:text-base"
             initial={{ opacity: 0, y: 20, rotateX: -10 }}
             animate={{ opacity: 1, y: 0, rotateX: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}

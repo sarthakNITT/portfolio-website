@@ -9,7 +9,7 @@ import { Calendar, Clock, Zap, Target } from 'lucide-react';
 
 const ComingUpSection = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.3 });
+  const isInView = useInView(ref, { once: true, amount: 0.1, margin: '0px 0px -20% 0px' });
 
   const upcomingProjects = [
     {
@@ -67,11 +67,11 @@ const ComingUpSection = () => {
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
         >
-          <motion.div variants={itemVariants} className="text-center mb-16">
-            <h2 className="tracking-[-0.05em] text-center text-[50px] text-white w-[50%] text-center mx-auto">
+          <motion.div variants={itemVariants} className="text-center mb-10 md:mb-16">
+            <h2 className="tracking-[-0.05em] text-center text-[34px] sm:text-[42px] md:text-[50px] text-white max-w-3xl w-full px-2 sm:px-0 mx-auto">
               Coming Up Next
             </h2>
-            <p className="tracking-[-0.05em] text-center text-white/70 pb-4 w-[50%] text-center mx-auto">
+            <p className="tracking-[-0.02em] text-center text-white/70 pb-2 md:pb-4 max-w-3xl w-full px-2 sm:px-0 mx-auto text-sm sm:text-base">
               Exciting projects and initiatives I'm working on or planning for the near future.
               Stay tuned for updates!
             </p>
@@ -82,11 +82,11 @@ const ComingUpSection = () => {
             {upcomingProjects.map((project, index) => (
               <motion.div key={index} variants={itemVariants}>
                 <Card className="glass border-0 hover:shadow-xl transition-all duration-300 group">
-                  <CardContent className="p-6">
-                    <div className="flex flex-col lg:flex-row lg:items-center gap-6">
+                  <CardContent className="p-4 sm:p-6">
+                    <div className="flex flex-col lg:flex-row lg:items-center gap-4 sm:gap-6">
                       <div className="flex-1">
                         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-3">
-                          <h3 className="text-xl font-bold group-hover:text-blue-400 transition-colors">
+                          <h3 className="text-lg sm:text-xl font-bold group-hover:text-blue-400 transition-colors">
                             {project.title}
                           </h3>
                           <div className="flex items-center gap-2">
@@ -103,7 +103,7 @@ const ComingUpSection = () => {
                           </div>
                         </div>
                         
-                        <p className="text-muted-foreground mb-4">
+                        <p className="text-muted-foreground mb-4 text-sm">
                           {project.description}
                         </p>
                         

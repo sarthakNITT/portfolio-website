@@ -11,7 +11,7 @@ import { Mail, MessageCircle, Phone, MapPin, Send, Github, Linkedin, Twitter } f
 
 const CollaborateSection = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.3 });
+  const isInView = useInView(ref, { once: true, amount: 0.1, margin: '0px 0px -20% 0px' });
 
   const socialLinks = [
     { icon: Github, href: "#", label: "GitHub" },
@@ -56,11 +56,11 @@ const CollaborateSection = () => {
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
         >
-          <motion.div variants={itemVariants} className="text-center mb-16">
-            <h2 className="tracking-[-0.05em] text-center text-[50px] text-white w-[50%] text-center mx-auto">
+          <motion.div variants={itemVariants} className="text-center mb-10 md:mb-16">
+            <h2 className="tracking-[-0.05em] text-center text-[34px] sm:text-[42px] md:text-[50px] text-white max-w-3xl w-full px-2 sm:px-0 mx-auto">
               Let's Collaborate
             </h2>
-            <p className="tracking-[-0.05em] text-center text-white/70 pb-4 w-[50%] text-center mx-auto">
+            <p className="tracking-[-0.02em] text-center text-white/70 pb-2 md:pb-4 max-w-3xl w-full px-2 sm:px-0 mx-auto text-sm sm:text-base">
               I'm always excited to work on new projects and help bring ideas to life.
               Let's discuss how we can work together to create something amazing.
             </p>
@@ -70,11 +70,11 @@ const CollaborateSection = () => {
             {/* Contact Form */}
             <motion.div variants={itemVariants}>
               <Card className="glass border-0 h-full">
-                <CardContent className="p-8">
-                  <h3 className="text-2xl font-bold mb-6">Send a Message</h3>
+                <CardContent className="p-4 sm:p-8">
+                  <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">Send a Message</h3>
                   
-                  <form className="space-y-6">
-                    <div className="grid md:grid-cols-2 gap-4">
+                  <form className="space-y-4 sm:space-y-6">
+                    <div className="grid sm:grid-cols-2 gap-4">
                       <div>
                         <label className="block text-sm font-medium mb-2">Name</label>
                         <Input placeholder="Your name" className="glass border-0" />

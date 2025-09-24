@@ -9,7 +9,7 @@ import { ExternalLink, Github } from 'lucide-react';
 
 const ProjectsSection = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.2 });
+  const isInView = useInView(ref, { once: true, amount: 0.1, margin: '0px 0px -20% 0px' });
 
   const projects = [
     {
@@ -107,12 +107,12 @@ const ProjectsSection = () => {
           animate={isInView ? "visible" : "hidden"}
         >
           <motion.div variants={itemVariants} className="text-center mb-8">
-            <h2 className="tracking-[-0.05em] text-center text-[50px] text-white w-[50%] text-center mx-auto">
+            <h2 className="tracking-[-0.05em] text-center text-[34px] sm:text-[42px] md:text-[50px] text-white max-w-3xl w-full px-2 sm:px-0 mx-auto">
               My Projects
             </h2>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
             {projects.map((project, index) => (
               <motion.div key={index} variants={itemVariants}>
                 <Card className="h-full glass border-0 overflow-hidden group hover:shadow-xl transition-all duration-300">
@@ -120,7 +120,7 @@ const ProjectsSection = () => {
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
+                      className="w-full h-40 sm:h-48 object-cover transition-transform duration-300 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
